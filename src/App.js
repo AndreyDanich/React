@@ -1,19 +1,12 @@
 import './App.css';
 import './components/Message/message.css';
 import { Message } from './components/Message/message';
+import { MessageList } from './components/MessageList/messageList';
 
-// class App extends React.Component {
-//   render() {
-//     const header = 'Hello'
-//     return (
-//       <div className="message">
-//         <Message header={header}></Message>
-//       </div>
-//     );
-//   }
+
+// {
+//   [].map(() => ...)
 // }
-
-// ReactDOM.render(<App />, document.getElementById('root'));
 
 
 function App() {
@@ -21,6 +14,7 @@ function App() {
   return (
     <div className="message">
       <Message header={header}></Message>
+      <MessageList></MessageList>
     </div>
   );
 }
