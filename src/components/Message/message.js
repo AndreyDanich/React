@@ -8,9 +8,3 @@ export function Message(props) {
 }
 
 
-
-// ReactDom.render(
-//     element,
-//     document.getElementById('root')
-// );
-

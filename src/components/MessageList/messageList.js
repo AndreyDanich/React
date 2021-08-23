@@ -1,8 +1,58 @@
-import { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { List } from './list';
+// import { Message } from '../Message/message';
+
+//id={Date.now()}
+
+const Form = ({ onChange }) => {
+
+    const [messages, setMessages] = useState('');
+
+    return (
+        <>
+            <input value={messages} onChange={(event) => {
+                setMessages(event.target.value);
+            }} type="text" />
+            <button onClick={() => {
+                if (!onChange) {
+                    return;
+                }
+                onChange(messages)
+            }}>send</button>
+        </>
+    );
+
+};
 
 
 export function MessageList() {
-    // const user = { author: "", text: "" };
+    const [messages, setMessages] = useState('');
+    return (
+        <div className="input">
+            <div>{messages}</div>
+            <Form onChange={setMessages} />
+        </div>
+    );
+
+}
+
+// в list.js прописал рендер через .map, как вписать в пустой массив изменения из формы не догнал
+
+
+
+
+
+
+
+
+
+// (<div className="input" >
+//             <input className="formSize" type="text" />
+//             <button>push</button>
+//         </div>)
+
+
+// const user = { author: "", text: "" };
     // const [messages, setMessages] = useState(0);
 
     // const updateMessage = () => {
@@ -21,24 +71,4 @@ export function MessageList() {
     //     </div>)
     // )
 
-    const [messages, setMessages] = useState([
-        "messages 1",
-        "messages 2",
-        "messages 3",
-    ]);
-
-    return (
-        (messages.map((message) => <div>{message}</div>)),
-
-        (<div className="input" >
-            <input className="formSize" type="text" />
-            <button>push</button>
-        </div>)
-    )
-}
-
-// (<div className="input" >
-//             <input className="formSize" type="text" />
-//             <button>push</button>
-//         </div>)
 
