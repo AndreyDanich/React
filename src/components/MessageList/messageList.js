@@ -1,24 +1,48 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { List } from './list';
-// import { Message } from '../Message/message';
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+import Input from '@material-ui/core/Input';
 
 //id={Date.now()}
 
 const Form = ({ onChange }) => {
 
     const [messages, setMessages] = useState('');
+    const useStyles = makeStyles((theme) => ({
+        root: {
+            '& > *': {
+                margin: theme.spacing(1),
+            },
+        },
+    }));
+    const classes = useStyles();
+
 
     return (
         <>
-            <input value={messages} onChange={(event) => {
-                setMessages(event.target.value);
-            }} type="text" />
-            <button onClick={() => {
-                if (!onChange) {
-                    return;
-                }
-                onChange(messages)
-            }}>send</button>
+
+
+            <form className={classes.root} noValidate autoComplete="off">
+                <Input
+                    value={messages} onChange={(event) => {
+                        setMessages(event.target.value);
+                    }}
+                    type="text"
+                    placeholder="Сообщение"
+                    inputProps={{ 'aria-label': 'description' }}
+                />
+            </form>
+
+            <div className={classes.root}>
+                <Button
+                    variant="contained" onClick={() => {
+                        if (!onChange) {
+                            return;
+                        }
+                        onChange(messages)
+                    }}>send</Button>
+            </div>
         </>
     );
 
@@ -46,10 +70,6 @@ export function MessageList() {
 
 
 
-// (<div className="input" >
-//             <input className="formSize" type="text" />
-//             <button>push</button>
-//         </div>)
 
 
 // const user = { author: "", text: "" };

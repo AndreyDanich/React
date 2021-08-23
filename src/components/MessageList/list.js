@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 
 export function List() {
-    const list = [
-        "message 1",
-        "message 2",
-        "message 3",
-    ];
+    const [messages, setMessages] = useState([
+        { id: 'id1', text: "message 1" },
+        { id: 'id2', text: "message 2" },
+        { id: 'id3', text: "message 2" },
+    ]);
 
-    return list.map((message) => <div>{message}</div>);
+    return messages.map((message) => <div key={message.id}>{message.text}</div>);
 }
+
