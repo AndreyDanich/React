@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import React, { useState } from 'react';
 import { List } from './list';
 // import { Message } from '../Message/message';
@@ -7,8 +8,15 @@ import { List } from './list';
 const Form = ({ onChange }) => {
 
     const [messages, setMessages] = useState('');
+=======
+import React from 'react';
+import {MessageItem} from '../MessageItem/messageItem'
 
+>>>>>>> Stashed changes
+
+export function MessageList(props) {
     return (
+<<<<<<< Updated upstream
         <>
             <input value={messages} onChange={(event) => {
                 setMessages(event.target.value);
@@ -34,14 +42,17 @@ export function MessageList() {
         </div>
     );
 
+=======
+        <ul>
+            {props.message.map((message, index) => {
+                return <MessageItem message={message} index={index}/>
+            })}
+            
+
+        </ul>
+    )
+>>>>>>> Stashed changes
 }
-
-// в list.js прописал рендер через .map, как вписать в пустой массив изменения из формы не догнал
-
-
-
-
-
 
 
 
@@ -52,23 +63,9 @@ export function MessageList() {
 //         </div>)
 
 
-// const user = { author: "", text: "" };
-    // const [messages, setMessages] = useState(0);
+// return <MessageItem message={message} key={message.id}/>
 
-    // const updateMessage = () => {
-    //     setMessages((prevMessages) => prevMessages + 1);
-    // }
 
-    // useEffect(() => {
-    //     console.log(messages);
-    // }, [messages]);
 
-    // return (
-    //     (messages.map((message) => <div>{message}</div>)),
-    //     (<div className="input" >
-    //         <input className="formSize" type="text" />{messages}
-    //         <button onClick={updateMessage}>push</button>
-    //     </div>)
-    // )
 
 
