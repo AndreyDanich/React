@@ -1,0 +1,10 @@
+.chat {
+  text-align: center;
+  padding: 10px;
+  margin: 30px;
+  width: 500px;
+  white-space: wrap;
+  overflow: hidden;
+  border: 3px inset #000;
+  border-radius: 10px;
+}
