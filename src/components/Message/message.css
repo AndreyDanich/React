@@ -1,5 +1,9 @@
-.message {
-    text-align: center;
-    padding: 20px;
-    width: 200px;
+.messages {
+  text-align: center;
+  padding: 10px;
+  margin: 30px;
+  margin-left: 0px;
+  overflow: hidden;
+  border: 3px inset #000;
+  border-radius: 10px;
 }

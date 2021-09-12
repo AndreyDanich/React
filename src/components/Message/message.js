@@ -6,5 +6,3 @@ export function Message(props) {
         <h1>{props.header}</h1>
     )
 }
-
-

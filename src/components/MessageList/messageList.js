@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import React, { useEffect, useState } from 'react';
 import { List } from './list';
 import { makeStyles } from '@material-ui/core/styles';
@@ -18,8 +19,14 @@ const Form = ({ onChange }) => {
     }));
     const classes = useStyles();
 
+=======
+import React from 'react';
+import {MessageItem} from '../MessageItem/messageItem'
+import PropTypes from 'prop-types';
+>>>>>>> Stashed changes
 
     return (
+<<<<<<< Updated upstream
         <>
 
 
@@ -90,5 +97,18 @@ export function MessageList() {
     //         <button onClick={updateMessage}>push</button>
     //     </div>)
     // )
+=======
+        <ul>
+            {props.message.map((message, index) => {
+                return <MessageItem message={message} index={index} key={message.id}/>
+            })}
+        </ul>
+    )
+}
+
+MessageList.propTypes = {
+    message: PropTypes.arrayOf(PropTypes.object).isRequired
+}
+>>>>>>> Stashed changes
 
 
