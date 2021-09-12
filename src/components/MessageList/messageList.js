@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import React, { useEffect, useState } from 'react';
 import { List } from './list';
 import { makeStyles } from '@material-ui/core/styles';
@@ -22,36 +23,15 @@ const Form = ({ onChange }) => {
     return (
         <>
 
+=======
+import React from 'react';
+import {MessageItem} from '../MessageItem/messageItem'
+import PropTypes from 'prop-types';
+>>>>>>> Stashed changes
 
-            <form className={classes.root} noValidate autoComplete="off">
-                <Input
-                    value={messages} onChange={(event) => {
-                        setMessages(event.target.value);
-                    }}
-                    type="text"
-                    placeholder="Сообщение"
-                    inputProps={{ 'aria-label': 'description' }}
-                />
-            </form>
-
-            <div className={classes.root}>
-                <Button
-                    variant="contained" onClick={() => {
-                        if (!onChange) {
-                            return;
-                        }
-                        onChange(messages)
-                    }}>send</Button>
-            </div>
-        </>
-    );
-
-};
-
-
-export function MessageList() {
-    const [messages, setMessages] = useState('');
+export function MessageList(props) {
     return (
+<<<<<<< Updated upstream
         <div className="input">
             <div>{messages}</div>
             <Form onChange={setMessages} />
@@ -90,5 +70,18 @@ export function MessageList() {
     //         <button onClick={updateMessage}>push</button>
     //     </div>)
     // )
+=======
+        <ul>
+            {props.message.map((message, index) => {
+                return <MessageItem message={message} index={index} key={message.id}/>
+            })}
+        </ul>
+    )
+}
+
+MessageList.propTypes = {
+    message: PropTypes.arrayOf(PropTypes.object).isRequired
+}
+>>>>>>> Stashed changes
 
 
