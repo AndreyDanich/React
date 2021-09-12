@@ -1,0 +1,14 @@
+.App {
+  text-align: center;
+}
+.messenger {
+  display: flex;
+  justify-content: center;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}

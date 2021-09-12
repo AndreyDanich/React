@@ -1,0 +1,14 @@
+.chatList {
+  text-align: center;
+  padding: 10px;
+  margin: 30px;
+  margin-right: 0px;
+  max-width: 300px;
+  white-space: wrap;
+  border: 3px inset #000;
+  border-radius: 10px;
+}
+
+.chatUl {
+  padding-left: 0px;
+}
